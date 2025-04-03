@@ -69,9 +69,9 @@
     </nav>
     
     <header>
-        <h1>Tu Nombre</h1>
+        <h1>José Luis Rodríguez Alvarez</h1>
         <p>Desarrollador Web | Software</p>
-        <a href="#proyectos" class="btn btn-primary btn-lg mt-3" onclick="scrollToSection(event, 'proyectos')">Ver Proyectos</a>
+        <a href="#proyectos" class="btn btn-primary btn-lg mt-3" id="verProyectos">Ver Proyectos</a>
     </header>
     
     <div class="container mt-5">
@@ -136,6 +136,12 @@
             event.preventDefault();
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
         }
+
+        document.getElementById("verProyectos").addEventListener("click", function(event) {
+    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    document.getElementById("proyectos").scrollIntoView({ behavior: "smooth" });
+});
+
     </script>
 </body>
 </html>
