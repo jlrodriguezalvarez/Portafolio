@@ -25,8 +25,9 @@
                     <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
                     <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                    <li class="nav-item"><button id="modoOscuro" class="btn btn-outline-light">🌙</button></li>
+                    <li class="nav-item"><button id="modoOscuro" class="btn btn-outline-light">🌙</button></li>                     
                 </ul>
+                  
             </div>
         </div>
     </nav>
@@ -41,32 +42,136 @@
     
     <!-- Sección Sobre Mí -->
     <div class="container mt-5">
-        <section id="sobre-mi" class="mb-5">
-            <h2 class="section-title text-center">Sobre Mí</h2>
-            <p class="text-center">Aquí puedes escribir una breve descripción sobre ti, tus habilidades y tu experiencia.</p>
-        </section>
+<!-- Sección Sobre Mí -->
+<section id="sobre-mi" class="container mt-5">
+    <h2 class="text-center">Sobre Mí</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="tu-foto.jpg" alt="Foto de José Luis Rodríguez" class="img-fluid rounded-circle" />
+        </div>
+        <div class="col-md-8">
+            <p>
+                Soy un ingeniero en sistemas computacionales con experiencia en el desarrollo de software y soporte técnico. Mi carrera comenzó con una pasión por la tecnología, y hoy me especializo en crear soluciones digitales que mejoren la vida de las personas. 
+            </p>
+            <p>
+                He trabajado con múltiples lenguajes y frameworks, y me encanta enfrentar nuevos retos. Siempre busco optimizar el rendimiento, la accesibilidad y la experiencia de usuario en todos los proyectos que desarrollo.
+            </p>
+            <p>
+                Si te interesa saber más sobre mis proyectos o mi experiencia, no dudes en contactarme. ¡Estoy abierto a nuevas oportunidades y desafíos!
+            </p>
+        </div>
+    </div>
+</section>
 
-        <!-- Sección Habilidades -->
-        <section id="habilidades" class="mb-5">
-            <h2 class="section-title text-center">Habilidades</h2>
-            <div class="row text-center">
-                <div class="col-md-4 habilidades p-3 shadow-sm rounded">
-                    <i class="fas fa-code fa-3x mb-3 text-primary"></i>
-                    <h4>Frontend</h4>
-                    <p>HTML, CSS, JavaScript, React, Bootstrap, SASS</p>
-                </div>
-                <div class="col-md-4 habilidades p-3 shadow-sm rounded">
-                    <i class="fas fa-server fa-3x mb-3 text-success"></i>
-                    <h4>Backend</h4>
-                    <p>.NET, C#, PHP, Python, Java, MySQL</p>
-                </div>
-                <div class="col-md-4 habilidades p-3 shadow-sm rounded">
-                    <i class="fas fa-tools fa-3x mb-3 text-warning"></i>
-                    <h4>Otras</h4>
-                    <p>Git, Linux, Soporte Técnico</p>
+<!-- Sección Habilidades -->
+<section id="habilidades" class="container">
+    <h2 class="text-center">Mis Habilidades</h2>
+    
+    <!-- Contenedor de habilidades -->
+    <div id="habilidades-container" class="row">
+    
+        <!-- Habilidad: Desarrollo Web -->
+        <div class="col-md-4">
+            <div class="card habilidades">
+                <div class="card-body text-center">
+                    <i class="fab fa-html5 fa-3x"></i>
+                    <h5 class="card-title">Desarrollo Web</h5>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>.NET</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Habilidad: Desarrollo de Software -->
+        <div class="col-md-4">
+            <div class="card habilidades">
+                <div class="card-body text-center">
+                    <i class="fas fa-laptop-code fa-3x"></i>
+                    <h5 class="card-title">Desarrollo de Software</h5>
+                    <ul>
+                        <li>Java</li>
+                        <li>C# - C++</li>
+                        <li>Python</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidad: Bases de Datos -->
+        <div class="col-md-4">
+            <div class="card habilidades">
+                <div class="card-body text-center">
+                    <i class="fas fa-database fa-3x"></i>
+                    <h5 class="card-title">Bases de Datos</h5>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>SQL Server</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fila 2 de habilidades -->
+    <div class="row">
+        <!-- Habilidad: Herramientas y Frameworks -->
+        <div class="col-md-4">
+            <div class="card habilidades">
+                <div class="card-body text-center">
+                    <i class="fab fa-bootstrap fa-3x"></i>
+                    <h5 class="card-title">Herramientas & Frameworks</h5>
+                    <ul>
+                        <li>Bootstrap</li>
+                        <li>Angular</li>
+                        <li>Laravel</li>
+                        <li>Django</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidad: DevOps y Administración -->
+        <div class="col-md-4">
+            <div class="card habilidades">
+                <div class="card-body text-center">
+                    <i class="fab fa-docker fa-3x"></i>
+                    <h5 class="card-title">DevOps & Administración</h5>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Git</li>
+                        <li>Jenkins</li>
+                        <li>Travis CI</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidad: Aplicaciones Móviles -->
+        <div class="col-md-4">
+            <div class="card habilidades">
+                <div class="card-body text-center">
+                    <i class="fab fa-android fa-3x"></i>
+                    <h5 class="card-title">Aplicaciones Móviles</h5>
+                    <ul>
+                        <li>Android Studio</li>
+                        <li>React Native</li>
+                        <li>Flutter</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
         
         <!-- Sección Proyectos -->
         <section id="proyectos" class="mb-5">
@@ -145,15 +250,33 @@
 
         
         <!-- Sección de Contacto -->
-        <section id="contacto" class="mb-5">
-            <h2 class="section-title text-center">Contacto</h2>
-            <p class="text-center">Puedes contactarme en:</p>
-            <ul class="list-unstyled text-center">
-                <li>Email: tuemail@example.com</li>
-                <li>GitHub: <a href="https://github.com/tuusuario">jlrodriguezalvarez</a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/tuusuario">Jose Luis Rodriguz Alvarez</a></li>
-            </ul>
-        </section>
+        <!-- Sección de Contacto -->
+<section id="contacto" class="mb-5">
+    <h2 class="section-title text-center">Contacto</h2>
+    <p class="text-center">Puedes contactarme en:</p>
+    <ul class="list-unstyled text-center">
+        <li>Email: jlrodriguezalvarez@outlooks.com</li>
+        <li>GitHub: <a href="https://github.com/jlrodriguezalvarez">jlrodriguezalvarez</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/tuusuario">José Luis Rodríguez Alvarez</a></li>
+    </ul>
+    <!-- Formulario de contacto (opcional) -->
+    <form id="contact-form" class="mt-4">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</section>
+
     </div>
     
     <!-- Footer -->

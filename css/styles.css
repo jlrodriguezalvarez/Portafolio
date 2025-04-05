@@ -35,9 +35,43 @@ header {
       color: white; }
 
 .habilidades {
-  transition: transform 0.3s; }
+  transition: transform 0.3s;
+  margin-bottom: 30px; }
   .habilidades:hover {
-    transform: translateY(-10px); }
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
+  .habilidades .card-body i {
+    color: #007bff;
+    margin-bottom: 20px; }
+  .habilidades .card-body h5.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 15px; }
+  .habilidades .card-body ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    .habilidades .card-body ul li {
+      font-size: 1rem;
+      padding: 10px 0; }
+
+#habilidades-container .col-md-4 {
+  margin-bottom: 30px; }
+
+#habilidades {
+  margin-bottom: 50px; }
+
+body.dark-mode .habilidades {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #3a3a3a; }
+
+body.dark-mode .habilidades:hover {
+  background-color: #3700b3;
+  transform: translateY(-10px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
+
+body.dark-mode .habilidades .card-body i {
+  color: #a865fa; }
 
 .proyecto {
   text-align: center;
