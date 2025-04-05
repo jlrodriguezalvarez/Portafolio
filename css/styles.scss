@@ -1,0 +1,192 @@
+// Definición de colores principales
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$bg-color: #f8f9fa; // Color de fondo para el modo claro
+$transition-speed: 0.3s;
+
+// Variables para colores del modo claro (hover en tarjetas)
+$card-bg-light: white;
+$card-hover-light: #b3d3fa; // Color clarito para efecto hover
+$card-border-light: #ddd;
+
+// Variables para colores del modo oscuro
+$dark-bg-color: #121212;
+$dark-text-color: #ffffff;
+$dark-primary-color: #a865fa;
+$dark-secondary-color: #3700b3;
+$modal-bg-dark: #2c2f36;
+$card-bg-dark: #1e1e1e;
+$card-border-dark: #3a3a3a;
+$dark-border-color: #444444;
+
+// Estilos generales
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $bg-color;
+    color: $secondary-color;
+}
+
+// Navbar
+.navbar {
+    background-color: $primary-color;
+    transition: background-color $transition-speed, box-shadow $transition-speed;
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+    transform: scale(1.1);
+}
+body.dark-mode .navbar {
+    background-color: $dark-primary-color;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+// Header
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #0044cc, #0080ff);
+    color: white;
+    h1 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    .btn {
+        background-color: white;
+        color: $primary-color;
+        &:hover {
+            background-color: $primary-color;
+            color: white;
+        }
+    }
+}
+
+// Sección de habilidades
+.habilidades {
+    transition: transform $transition-speed;
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+
+// Proyectos
+.proyecto {
+    text-align: center;
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    transition: box-shadow $transition-speed, transform $transition-speed;
+    background-color: $card-bg-dark;
+    border: 1px solid $card-border-dark;
+    &:hover {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+    }
+}
+
+// Footer
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: $primary-color;
+    color: white;
+}
+
+// Modo oscuro
+body.dark-mode {
+    background-color: $dark-bg-color;
+    color: $dark-text-color;
+}
+body.dark-mode .navbar {
+    background-color: $dark-primary-color;
+}
+body.dark-mode .navbar-nav .nav-link {
+    color: $dark-text-color !important;
+}
+body.dark-mode header {
+    background: linear-gradient(to right, $dark-secondary-color, $dark-primary-color);
+}
+body.dark-mode footer {
+    background-color: $dark-primary-color;
+    color: $dark-text-color;
+}
+body.dark-mode .btn {
+    background-color: $dark-primary-color;
+    color: $dark-text-color;
+}
+
+// Modales en modo oscuro
+body.dark-mode .modal-content {
+    background-color: $modal-bg-dark;
+    color: $dark-text-color;
+    border-radius: 8px;
+}
+body.dark-mode .modal .modal-header {
+    background-color: $dark-primary-color !important;
+    color: $dark-text-color !important;
+}
+
+body.dark-mode .modal-footer {
+    border-top: 1px solid $dark-border-color;
+    color: $dark-text-color;
+}
+body.dark-mode .modal-header .close {
+    color: $dark-text-color;
+}
+
+
+
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.modal.fade.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+// Efecto hover general
+.proyecto:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+// Tarjetas modo claro
+.card {
+    background-color: $card-bg-light;
+    color: $secondary-color;
+    border: 1px solid $card-border-light;
+    transition: background-color $transition-speed, transform $transition-speed;
+  
+    &:hover {
+      background-color: $card-hover-light; // Aquí se ve claramente el cambio
+      transform: translateY(-10px);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+
+// Tarjetas en modo oscuro
+body.dark-mode .card {
+    background-color: $card-bg-dark;
+    color: $dark-text-color;
+    border: 1px solid $card-border-dark;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+body.dark-mode .card:hover {
+    background-color: $dark-secondary-color;
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
