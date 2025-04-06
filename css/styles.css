@@ -35,14 +35,12 @@ header {
       color: white; }
 
 .habilidades {
-  transition: transform 0.3s;
-  margin-bottom: 30px; }
+  transition: transform 0.3s; }
   .habilidades:hover {
     transform: translateY(-10px);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
   .habilidades .card-body i {
-    color: #007bff;
-    margin-bottom: 20px; }
+    color: #007bff; }
   .habilidades .card-body h5.card-title {
     font-size: 1.25rem;
     margin-bottom: 15px; }
@@ -50,15 +48,6 @@ header {
     list-style-type: none;
     padding: 0;
     margin: 0; }
-    .habilidades .card-body ul li {
-      font-size: 1rem;
-      padding: 10px 0; }
-
-#habilidades-container .col-md-4 {
-  margin-bottom: 30px; }
-
-#habilidades {
-  margin-bottom: 50px; }
 
 body.dark-mode .habilidades {
   background-color: #1e1e1e;
