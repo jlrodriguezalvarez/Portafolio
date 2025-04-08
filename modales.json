@@ -1,108 +1,132 @@
 [
-    {
-      "id": "modalProyecto1",
-      "titulo": "Sistema de Gestión de Tickets",
-      "icono": "fas fa-code",
-      "imagen": "imagenes/tickets.png",
-      "descripcion": "Sistema para registrar, asignar y cerrar tickets de soporte. Incluye panel de usuario, técnico y administrador.",
-      "tecnologias": [
-        { "icono": "fab fa-php text-primary", "nombre": "PHP" },
-        { "icono": "fas fa-database text-success", "nombre": "MySQL" },
-        { "icono": "fab fa-bootstrap text-purple", "nombre": "Bootstrap" },
-        { "icono": "fab fa-js-square text-warning", "nombre": "JavaScript" }
-      ],
-      "caracteristicas": [
-        "Autenticación y gestión de roles.",
-        "Dashboard con estadísticas.",
-        "Reportes en PDF."
-      ],
-      "github": "https://github.com/tu_usuario/gestion-tickets"
-    },
-    {
-      "id": "modalProyecto2",
-      "titulo": "App de Tareas con Vue",
-      "icono": "fas fa-tasks",
-      "imagen": "imagenes/tareas.png",
-      "descripcion": "Una aplicación simple para gestionar tareas con interfaz moderna y filtros.",
-      "tecnologias": [
-        { "icono": "fab fa-vuejs text-success", "nombre": "Vue.js" },
-        { "icono": "fab fa-css3-alt text-info", "nombre": "CSS" }
-      ],
-      "caracteristicas": [
-        "Agregar, eliminar y filtrar tareas.",
-        "Guardado local de tareas.",
-        "Diseño responsive."
-      ],
-      "github": "https://github.com/tu_usuario/app-tareas-vue"
-    },
-    {
-      "id": "modalProyecto3",
-      "titulo": "Portfolio Personal",
-      "icono": "fas fa-user",
-      "imagen": "imagenes/portfolio.png",
-      "descripcion": "Tu portfolio hecho con amor, modo oscuro y diseño responsive para mostrar tus proyectos.",
-      "tecnologias": [
-        { "icono": "fab fa-html5 text-danger", "nombre": "HTML" },
-        { "icono": "fab fa-sass text-pink", "nombre": "SASS" },
-        { "icono": "fab fa-js text-warning", "nombre": "JavaScript" }
-      ],
-      "caracteristicas": [
-        "Modo oscuro automático.",
-        "Animaciones suaves con SCSS.",
-        "Modales dinámicos con JSON 😘"
-      ],
-      "github": "https://github.com/tu_usuario/mi-portafolio"
-    },
-    {
-      "id": "modalProyecto4",
-      "titulo": "Control Escolar",
-      "icono": "fas fa-school",
-      "imagen": "imagenes/escolar.png",
-      "descripcion": "Sistema CRUD para la gestión de alumnos, materias y calificaciones.",
-      "tecnologias": [
-        { "icono": "fab fa-laravel text-danger", "nombre": "Laravel" },
-        { "icono": "fab fa-js-square text-warning", "nombre": "JavaScript" }
-      ],
-      "caracteristicas": [
-        "Relaciones entre tablas.",
-        "Validaciones de formularios.",
-        "Roles de usuario."
-      ],
-      "github": "https://github.com/tu_usuario/control-escolar"
-    },
-    {
-      "id": "modalProyecto5",
-      "titulo": "Clon de Netflix",
-      "icono": "fas fa-video",
-      "imagen": "imagenes/netflix-clone.png",
-      "descripcion": "Clon básico de Netflix para practicar diseño UI y manejo de APIs.",
-      "tecnologias": [
-        { "icono": "fab fa-react text-cyan", "nombre": "React" },
-        { "icono": "fab fa-css3-alt text-primary", "nombre": "CSS" }
-      ],
-      "caracteristicas": [
-        "UI moderna con carrousels.",
-        "Consumo de API de películas.",
-        "Responsive design."
-      ],
-      "github": "https://github.com/tu_usuario/netflix-clone"
-    },
-    {
-      "id": "modalProyecto6",
-      "titulo": "Blog con Django",
-      "icono": "fas fa-blog",
-      "imagen": "imagenes/blog.png",
-      "descripcion": "Blog completo con creación y edición de artículos, comentarios y panel de administración.",
-      "tecnologias": [
-        { "icono": "fab fa-python text-info", "nombre": "Python" },
-        { "icono": "fas fa-database text-success", "nombre": "SQLite" }
-      ],
-      "caracteristicas": [
-        "Panel de admin con Django.",
-        "Comentarios por usuarios.",
-        "Edición en tiempo real."
-      ],
-      "github": "https://github.com/tu_usuario/blog-django"
-    }
-  ]
-  
+  {
+    "id": "modalProyecto1",
+    "titulo": "Sistema de Gestión de Tickets",
+    "icono": "fas fa-code",
+    "imagen": "imagenes/tickets.png",
+    "imagenes_slider": [
+      "imagenes/tickets1.jpg",
+      "imagenes/tickets2.jpg",
+      "imagenes/tickets3.jpg"
+    ],
+    "descripcion": "Sistema para registrar, asignar y cerrar tickets de soporte. Incluye panel de usuario, técnico y administrador.",
+    "tecnologias": [
+      { "icono": "fab fa-php text-primary", "nombre": "PHP" },
+      { "icono": "fas fa-database text-success", "nombre": "MySQL" },
+      { "icono": "fab fa-bootstrap text-purple", "nombre": "Bootstrap" },
+      { "icono": "fab fa-js-square text-warning", "nombre": "JavaScript" }
+    ],
+    "caracteristicas": [
+      "Autenticación y gestión de roles.",
+      "Dashboard con estadísticas.",
+      "Reportes en PDF."
+    ],
+    "github": "https://github.com/tu_usuario/gestion-tickets"
+  },
+  {
+    "id": "modalProyecto2",
+    "titulo": "App de Tareas con Vue",
+    "icono": "fas fa-tasks",
+    "imagen": "imagenes/tareas.png",
+    "imagenes_slider": [
+      "imagenes/tareas1.png",
+      "imagenes/tareas2.png"
+    ],
+    "descripcion": "Una aplicación simple para gestionar tareas con interfaz moderna y filtros.",
+    "tecnologias": [
+      { "icono": "fab fa-vuejs text-success", "nombre": "Vue.js" },
+      { "icono": "fab fa-css3-alt text-info", "nombre": "CSS" }
+    ],
+    "caracteristicas": [
+      "Agregar, eliminar y filtrar tareas.",
+      "Guardado local de tareas.",
+      "Diseño responsive."
+    ],
+    "github": "https://github.com/tu_usuario/app-tareas-vue"
+  },
+  {
+    "id": "modalProyecto3",
+    "titulo": "Portfolio Personal",
+    "icono": "fas fa-user",
+    "imagen": "imagenes/portfolio.png",
+    "imagenes_slider": [
+      "imagenes/portfolio1.png",
+      "imagenes/portfolio2.png"
+    ],
+    "descripcion": "Sitio web personal con diseño responsivo, modo oscuro automático y secciones modulares",
+    "tecnologias": [
+      { "icono": "fab fa-html5 text-danger", "nombre": "HTML" },
+      { "icono": "fab fa-sass text-pink", "nombre": "SASS" },
+      { "icono": "fab fa-js text-warning", "nombre": "JavaScript" }
+    ],
+    "caracteristicas": [
+      "Modo oscuro automático.",
+      "Animaciones suaves con SCSS.",
+      "Modales dinámicos con JSON 😘"
+    ],
+    "github": "https://github.com/tu_usuario/mi-portafolio"
+  },
+  {
+    "id": "modalProyecto4",
+    "titulo": "Control Escolar",
+    "icono": "fas fa-school",
+    "imagen": "imagenes/escolar.png",
+    "imagenes_slider": [
+      "imagenes/escolar1.png",
+      "imagenes/escolar2.png"
+    ],
+    "descripcion": "Sistema CRUD para la gestión de alumnos, materias y calificaciones.",
+    "tecnologias": [
+      { "icono": "fab fa-laravel text-danger", "nombre": "Laravel" },
+      { "icono": "fab fa-js-square text-warning", "nombre": "JavaScript" }
+    ],
+    "caracteristicas": [
+      "Relaciones entre tablas.",
+      "Validaciones de formularios.",
+      "Roles de usuario."
+    ],
+    "github": "https://github.com/tu_usuario/control-escolar"
+  },
+  {
+    "id": "modalProyecto5",
+    "titulo": "Clon de Netflix",
+    "icono": "fas fa-video",
+    "imagen": "imagenes/netflix-clone.png",
+    "imagenes_slider": [
+      "imagenes/netflix-clone1.png",
+      "imagenes/netflix-clone2.png"
+    ],
+    "descripcion": "Clon básico de Netflix para practicar diseño UI y manejo de APIs.",
+    "tecnologias": [
+      { "icono": "fab fa-react text-cyan", "nombre": "React" },
+      { "icono": "fab fa-css3-alt text-primary", "nombre": "CSS" }
+    ],
+    "caracteristicas": [
+      "UI moderna con carrousels.",
+      "Consumo de API de películas.",
+      "Responsive design."
+    ],
+    "github": "https://github.com/tu_usuario/netflix-clone"
+  },
+  {
+    "id": "modalProyecto6",
+    "titulo": "Blog con Django",
+    "icono": "fas fa-blog",
+    "imagen": "imagenes/blog.png",
+    "imagenes_slider": [
+      "imagenes/blog1.png",
+      "imagenes/blog2.png"
+    ],
+    "descripcion": "Blog completo con creación y edición de artículos, comentarios y panel de administración.",
+    "tecnologias": [
+      { "icono": "fab fa-python text-info", "nombre": "Python" },
+      { "icono": "fas fa-database text-success", "nombre": "SQLite" }
+    ],
+    "caracteristicas": [
+      "Panel de admin con Django.",
+      "Comentarios por usuarios.",
+      "Edición en tiempo real."
+    ],
+    "github": "https://github.com/tu_usuario/blog-django"
+  }
+]

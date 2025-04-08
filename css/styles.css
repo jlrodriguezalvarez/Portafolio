@@ -1,8 +1,119 @@
+@charset "UTF-8";
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f8f9fa;
   color: #6c757d; }
 
+/* Asegurando que el header ocupe toda la altura de la pantalla inicial */
+header {
+  text-align: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+  /* Esto hace que el header ocupe el 100% de la pantalla */
+  background: linear-gradient(to right, #0044cc, #0080ff);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centra el contenido del header */
+  /* Estilos del botón */ }
+  header h1 {
+    font-size: 4rem;
+    /* Aumenta el tamaño del título */
+    margin-bottom: 20px; }
+  header p {
+    font-size: 2rem;
+    /* Aumenta el tamaño del subtítulo */
+    margin-bottom: 30px; }
+  header .btn {
+    background-color: #0066cc;
+    /* Azul más oscuro para el estado normal */
+    color: white;
+    /* Texto en blanco */
+    padding: 15px 30px;
+    /* Espaciado cómodo */
+    font-size: 1.1rem;
+    /* Tamaño de fuente más grande */
+    font-weight: bold;
+    /* Negritas */
+    text-transform: uppercase;
+    /* Mayúsculas */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    border: 2px solid #0066cc;
+    /* Borde azul en el estado normal */
+    display: inline-flex;
+    /* Usamos inline-flex para alinear texto e íconos */
+    align-items: center;
+    /* Centra el contenido verticalmente */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    transition: all 0.3s ease;
+    /* Transiciones suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra ligera */
+    min-width: 50%;
+    /* Ajustamos el ancho máximo para no hacerlo tan pequeño */
+    margin: 0 auto;
+    /* Hover en modo normal: Fondo blanco, texto azul */ }
+    header .btn:hover {
+      background-color: white;
+      color: #0066cc;
+      /* Texto azul en hover */
+      border-color: #0066cc;
+      /* Borde azul en hover */
+      transform: translateY(-2px);
+      /* Movimiento sutil hacia arriba */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      /* Sombra al pasar el ratón */ }
+
+/* Estilo para la animación de texto */
+.typed-text {
+  font-size: 2.5rem;
+  /* Aumenta el tamaño del texto animado */
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  /* Espaciado debajo del texto */
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0s 0.5s; }
+  .typed-text.hidden {
+    opacity: 0;
+    visibility: hidden; }
+
+/* Asegurarse de que la fuente se ajuste en pantallas pequeñas */
+@media (max-width: 768px) {
+  .typed-text {
+    font-size: 2rem;
+    /* Reduce el tamaño de la fuente en pantallas medianas */ } }
+@media (max-width: 480px) {
+  .typed-text {
+    font-size: 1.5rem;
+    /* Más pequeño para pantallas pequeñas */ } }
+/* Navbar (lo que queda de fondo) */
+nav {
+  position: absolute;
+  /* Para que el navbar quede encima del header */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  /* Asegura que el navbar esté sobre el header */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo semitransparente para el navbar */
+  color: white;
+  font-size: 1.2rem;
+  /* Aquí no estamos tocando las reglas de la navbar original, solo agregamos lo necesario para que flote sobre el header */ }
+
+/* Estilos previos de navbars*/
 .navbar {
   background-color: #007bff;
   transition: background-color 0.3s, box-shadow 0.3s; }
@@ -18,21 +129,14 @@ body.dark-mode .navbar {
   background-color: #a865fa;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); }
 
-header {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to right, #0044cc, #0080ff);
-  color: white; }
-  header h1 {
-    font-size: 3rem; }
-  header p {
-    font-size: 1.5rem; }
-  header .btn {
-    background-color: white;
-    color: #007bff; }
-    header .btn:hover {
-      background-color: #007bff;
-      color: white; }
+.section {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s ease-out; }
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0); }
 
 .habilidades {
   transition: transform 0.3s; }
@@ -98,8 +202,12 @@ body.dark-mode footer {
   color: #ffffff; }
 
 body.dark-mode .btn {
-  background-color: #a865fa;
-  color: #ffffff; }
+  background-color: #8941e2;
+  color: lightgoldenrodyellow; }
+
+body.dark-mode .btn:hover {
+  background-color: #f8f9fa;
+  color: #444444; }
 
 body.dark-mode .modal-content {
   background-color: #2c2f36;
@@ -125,6 +233,24 @@ body.dark-mode .modal-header .close {
 .modal.fade.show .modal-dialog {
   transform: translateY(0);
   opacity: 1; }
+
+/* Estilos para el carrusel */
+.modal-body {
+  position: relative;
+  padding: 0; }
+  .modal-body .carousel-modal {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    overflow: hidden; }
+    .modal-body .carousel-modal .carousel-inner,
+    .modal-body .carousel-modal .carousel-item {
+      height: 100%; }
+    .modal-body .carousel-modal .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
 
 .proyecto:hover {
   transform: scale(1.05);

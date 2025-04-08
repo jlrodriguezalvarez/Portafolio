@@ -39,6 +39,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      const target = document.querySelector(this.getAttribute('href'));
+      window.scrollTo({
+        top: target.offsetTop - 60, // Ajusta este valor según la altura del navbar
+        behavior: 'smooth'
+      });
+    });
+  });
 
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const typed = new Typed('.typed-text', {
+        strings: ["Hola Soy Jose Luis Rodriguez", "Desarrollador Web | Software", "Ing sistemas computacinales"], // Los textos que deseas animar
+        typeSpeed: 80,
+        backSpeed: 35,
+        backDelay: 1000,
+        startDelay: 500,
+        loop: true,
+        onComplete: function(self) {
+          // Aquí puedes agregar la clase hidden al texto anterior
+          const currentText = document.querySelector('.typed-text');
+          currentText.classList.add('hidden');
+          setTimeout(() => {
+            currentText.classList.remove('hidden');
+          }, 500); // El tiempo de espera debe coincidir con la transición
+        }
+      });      
+    
+
+});
 
 
