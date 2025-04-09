@@ -77,37 +77,37 @@ header {
 }
 
 /* Estilo para la animación de texto */
-.typed-text {
-    font-size: 2.5rem;  /* Aumenta el tamaño del texto animado */
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    margin-bottom: 20px; /* Espaciado debajo del texto */
-    line-height: 1.2;
-    white-space: nowrap;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease, visibility 0s 0.5s;
-    
-    &.hidden {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-
-/* Asegurarse de que la fuente se ajuste en pantallas pequeñas */
-@media (max-width: 768px) {
+/* Contenedor del texto de tipo animado */
+.typed-container {
+    display: inline-block;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: center; /* Centra el texto */
+    overflow-wrap: break-word; /* Asegura que el texto se ajuste si es largo */
+  }
+  
+  /* Asegurar que el texto no se desborde en pantallas más pequeñas */
+  .typed-text {
+    display: inline-block; /* Mantén el texto en línea */
+    font-size: 2.5rem; /* Tamaño de la fuente por defecto */
+    word-wrap: break-word; /* El texto largo se divide en varias líneas */
+    max-width: 100%; /* Asegura que el texto no se salga */
+  }
+  
+  /* Ajustar el tamaño del texto en pantallas más pequeñas */
+  @media (max-width: 768px) {
     .typed-text {
-      font-size: 2rem; /* Reduce el tamaño de la fuente en pantallas medianas */
+      font-size: 2rem; /* Reduce el tamaño del texto en pantallas medianas */
     }
   }
   
   @media (max-width: 480px) {
     .typed-text {
-      font-size: 1.5rem; /* Más pequeño para pantallas pequeñas */
+      font-size: 1.5rem; /* Asegura que el texto no sea demasiado grande en pantallas muy pequeñas */
     }
   }
+  
+
+
   
 /* Navbar (lo que queda de fondo) */
 nav {
@@ -189,24 +189,6 @@ body.dark-mode .navbar {
     }
 }
 
-// Modo oscuro para las tarjetas de habilidades
-body.dark-mode .habilidades {
-    background-color: $card-bg-dark;
-    color: $dark-text-color;
-    border: 1px solid $card-border-dark;
-}
-
-body.dark-mode .habilidades:hover {
-    background-color: $dark-secondary-color;
-    transform: translateY(-10px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-body.dark-mode .habilidades .card-body i {
-    color: $dark-primary-color;
-}
-
-
 
 // Proyectos
 .proyecto {
@@ -224,13 +206,24 @@ body.dark-mode .habilidades .card-body i {
     }
 }
 
-// Footer
-footer {
+.filters {
     text-align: center;
-    padding: 20px;
-    background-color: $primary-color;
-    color: white;
-}
+    margin-bottom: 20px;
+  
+    .filter-btn {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  
+    .filter-btn:hover {
+      background-color: #0056b3;
+    }
+  }
+  
 
 // Modo oscuro
 body.dark-mode {
@@ -260,6 +253,24 @@ body.dark-mode .btn:hover {
     color: $dark-border-color;
 }
 
+// Modo oscuro para las tarjetas de habilidades
+body.dark-mode .habilidades {
+    background-color: $card-bg-dark;
+    color: $dark-text-color;
+    border: 1px solid $card-border-dark;
+}
+
+body.dark-mode .habilidades:hover {
+    background-color: $dark-secondary-color;
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .habilidades .card-body i {
+    color: $dark-primary-color;
+}
+
+
 // Modales en modo oscuro
 body.dark-mode .modal-content {
     background-color: $modal-bg-dark;
@@ -278,8 +289,6 @@ body.dark-mode .modal-footer {
 body.dark-mode .modal-header .close {
     color: $dark-text-color;
 }
-
-
 
 .modal.fade .modal-dialog {
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
@@ -321,18 +330,30 @@ body.dark-mode .modal-header .close {
 }
 
 
+#contenedor-proyectos {
+    overflow: visible; // Asegúrate de que no haya corte del contenido en el contenedor
+    padding: 0 15px; // Un poco de espacio lateral para los proyectos
+    }
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
 
 
 
 
 // Efecto hover general
 .proyecto:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: transform 0.3s ease-in-out;
 }
 
+
 // Tarjetas modo claro
 .card {
+    max-width: 100%;  /* Asegúrate de que las tarjetas no se desborden */
+    box-sizing: border-box;
     background-color: $card-bg-light;
     color: $secondary-color;
     border: 1px solid $card-border-light;
@@ -358,3 +379,76 @@ body.dark-mode .card:hover {
     transform: translateY(-10px);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+// Footer
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: $primary-color;
+    color: white;
+}
+
+//Seccion de Contacto
+// Estilos generales para la sección de contacto
+#contacto {
+    padding: 3rem 0; // Mantengo el padding para que tenga espacio
+  
+    // Título de la sección
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+ }
+
+}
+  
+
+// Añádelo al final de tu archivo SASS, o en su sección correspondiente
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  
+    .contact-card {
+      background-color: $card-bg-light;
+      border: 1px solid $card-border-light;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      color: $secondary-color;
+      text-decoration: none;
+      transition: transform $transition-speed ease, box-shadow $transition-speed ease;
+  
+      i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        color: $primary-color;
+      }
+  
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  
+  // Estilos para modo oscuro del bloque de contacto
+  body.dark-mode {
+    .contact-card {
+      background-color: $card-bg-dark;
+      color: $dark-text-color;
+      border: 1px solid $dark-border-color;
+  
+      i {
+        color: $dark-primary-color;
+      }
+  
+      &:hover {
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+  

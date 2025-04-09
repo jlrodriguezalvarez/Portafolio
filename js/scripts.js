@@ -55,7 +55,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   document.addEventListener('DOMContentLoaded', function () {
     const typed = new Typed('.typed-text', {
-        strings: ["Hola Soy Jose Luis Rodriguez", "Desarrollador Web | Software", "Ing sistemas computacinales"], // Los textos que deseas animar
+        strings: ["Hola! Soy Jose Luis Rodriguez", "Desarrollador Web | Software", "Ing sistemas computacionales"], // Los textos que deseas animar
         typeSpeed: 80,
         backSpeed: 35,
         backDelay: 1000,
@@ -70,8 +70,79 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           }, 500); // El tiempo de espera debe coincidir con la transición
         }
       });      
-    
 
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Cargar el archivo JSON de proyectos
+  fetch('proyectos.json')
+      .then(response => response.json())
+      .then(proyectos => {
+          const proyectosPorPagina = 6; // Cuántos proyectos mostrar por página
+          let paginaActual = 1;
+
+          // Función para generar las tarjetas de proyectos
+          function generarProyectos(pagina) {
+              const contenedorProyectos = document.getElementById('contenedor-proyectos');
+              contenedorProyectos.innerHTML = ''; // Limpiar contenedor antes de agregar nuevos proyectos
+
+              // Calcular el rango de proyectos para la página actual
+              const inicio = (pagina - 1) * proyectosPorPagina;
+              const fin = inicio + proyectosPorPagina;
+              const proyectosPagina = proyectos.slice(inicio, fin);
+
+              proyectosPagina.forEach((proyecto, index) => {
+                  // Crear el elemento de la tarjeta
+                  const tarjeta = document.createElement('div');
+                  tarjeta.classList.add('col-md-4', 'mb-4');
+
+                  // El modal tendrá un id único basado en el índice del proyecto
+                  const modalId = `modalProyecto${(pagina - 1) * proyectosPorPagina + (index + 1)}`;
+
+                  tarjeta.innerHTML = `
+                      <div class="card h-100 shadow-sm">
+                          <img src="${proyecto.imagen}" class="card-img-top" alt="${proyecto.titulo}">
+                          <div class="card-body">
+                              <h5 class="card-title">${proyecto.titulo}</h5>
+                              <p class="card-text">${proyecto.descripcion}</p>
+                          </div>
+                          <div class="card-footer text-center">
+                              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${modalId}">Ver más</a>
+                          </div>
+                      </div>
+                  `;
+                  
+                  // Añadir la tarjeta al contenedor de proyectos
+                  contenedorProyectos.appendChild(tarjeta);
+              });
+          }
+
+          // Función para mostrar los controles de paginación
+          function mostrarPaginacion() {
+              const numPaginas = Math.ceil(proyectos.length / proyectosPorPagina);
+              const paginacionContenedor = document.getElementById('paginacion');
+              paginacionContenedor.innerHTML = ''; // Limpiar la paginación antes de agregar los nuevos botones
+
+              for (let i = 1; i <= numPaginas; i++) {
+                  const botonPaginacion = document.createElement('button');
+                  botonPaginacion.textContent = i;
+                  botonPaginacion.classList.add('btn', 'btn-secondary', 'mx-1');
+                  botonPaginacion.addEventListener('click', function() {
+                      paginaActual = i;
+                      generarProyectos(paginaActual);
+                  });
+                  paginacionContenedor.appendChild(botonPaginacion);
+              }
+          }
+
+          // Inicializar la página
+          generarProyectos(paginaActual);
+          mostrarPaginacion();
+      })
+      .catch(error => console.error('Error al cargar los proyectos:', error));
+});
+
 
 

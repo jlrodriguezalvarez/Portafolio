@@ -68,32 +68,36 @@ header {
       /* Sombra al pasar el ratón */ }
 
 /* Estilo para la animación de texto */
-.typed-text {
-  font-size: 2.5rem;
-  /* Aumenta el tamaño del texto animado */
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  /* Espaciado debajo del texto */
-  line-height: 1.2;
-  white-space: nowrap;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s ease, visibility 0s 0.5s; }
-  .typed-text.hidden {
-    opacity: 0;
-    visibility: hidden; }
+/* Contenedor del texto de tipo animado */
+.typed-container {
+  display: inline-block;
+  width: 100%;
+  /* Ocupa todo el ancho disponible */
+  text-align: center;
+  /* Centra el texto */
+  overflow-wrap: break-word;
+  /* Asegura que el texto se ajuste si es largo */ }
 
-/* Asegurarse de que la fuente se ajuste en pantallas pequeñas */
+/* Asegurar que el texto no se desborde en pantallas más pequeñas */
+.typed-text {
+  display: inline-block;
+  /* Mantén el texto en línea */
+  font-size: 2.5rem;
+  /* Tamaño de la fuente por defecto */
+  word-wrap: break-word;
+  /* El texto largo se divide en varias líneas */
+  max-width: 100%;
+  /* Asegura que el texto no se salga */ }
+
+/* Ajustar el tamaño del texto en pantallas más pequeñas */
 @media (max-width: 768px) {
   .typed-text {
     font-size: 2rem;
-    /* Reduce el tamaño de la fuente en pantallas medianas */ } }
+    /* Reduce el tamaño del texto en pantallas medianas */ } }
 @media (max-width: 480px) {
   .typed-text {
     font-size: 1.5rem;
-    /* Más pequeño para pantallas pequeñas */ } }
+    /* Asegura que el texto no sea demasiado grande en pantallas muy pequeñas */ } }
 /* Navbar (lo que queda de fondo) */
 nav {
   position: absolute;
@@ -153,19 +157,6 @@ body.dark-mode .navbar {
     padding: 0;
     margin: 0; }
 
-body.dark-mode .habilidades {
-  background-color: #1e1e1e;
-  color: #ffffff;
-  border: 1px solid #3a3a3a; }
-
-body.dark-mode .habilidades:hover {
-  background-color: #3700b3;
-  transform: translateY(-10px);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
-
-body.dark-mode .habilidades .card-body i {
-  color: #a865fa; }
-
 .proyecto {
   text-align: center;
   transition: box-shadow 0.3s, transform 0.3s;
@@ -178,11 +169,18 @@ body.dark-mode .habilidades .card-body i {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transform: scale(1.05); }
 
-footer {
+.filters {
   text-align: center;
-  padding: 20px;
-  background-color: #007bff;
-  color: white; }
+  margin-bottom: 20px; }
+  .filters .filter-btn {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer; }
+  .filters .filter-btn:hover {
+    background-color: #0056b3; }
 
 body.dark-mode {
   background-color: #121212;
@@ -208,6 +206,19 @@ body.dark-mode .btn {
 body.dark-mode .btn:hover {
   background-color: #f8f9fa;
   color: #444444; }
+
+body.dark-mode .habilidades {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #3a3a3a; }
+
+body.dark-mode .habilidades:hover {
+  background-color: #3700b3;
+  transform: translateY(-10px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
+
+body.dark-mode .habilidades .card-body i {
+  color: #a865fa; }
 
 body.dark-mode .modal-content {
   background-color: #2c2f36;
@@ -252,11 +263,22 @@ body.dark-mode .modal-header .close {
       height: 100%;
       object-fit: cover; }
 
+#contenedor-proyectos {
+  overflow: visible;
+  padding: 0 15px; }
+
+.row {
+  margin-left: 0;
+  margin-right: 0; }
+
 .proyecto:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   transition: transform 0.3s ease-in-out; }
 
 .card {
+  max-width: 100%;
+  /* Asegúrate de que las tarjetas no se desborden */
+  box-sizing: border-box;
   background-color: white;
   color: #6c757d;
   border: 1px solid #ddd;
@@ -276,5 +298,49 @@ body.dark-mode .card:hover {
   background-color: #3700b3;
   transform: translateY(-10px);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #007bff;
+  color: white; }
+
+#contacto {
+  padding: 3rem 0; }
+  #contacto .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem; }
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem; }
+  .contact-links .contact-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: #6c757d;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .contact-links .contact-card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: #007bff; }
+    .contact-links .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
+
+body.dark-mode .contact-card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444444; }
+  body.dark-mode .contact-card i {
+    color: #a865fa; }
+  body.dark-mode .contact-card:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.15); }
 
 /*# sourceMappingURL=styles.css.map */
