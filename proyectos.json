@@ -1,84 +1,72 @@
 [
     {
-      "titulo": "Proyecto Web 1",
-      "descripcion": "Este es un proyecto de ejemplo en el que se desarrolló una página web con HTML, CSS y JavaScript.",
-      "imagen": "proyecto1.jpg",
-      "link": "https://enlace-a-tu-proyecto1.com"
+      "titulo": "Sistema de Gestion de Tickets",
+      "descripcion": "Este es un proyecto Web para la gestion de tickets del área de TI con PHP y Laravel.",
+      "imagen": "imagenes/tickets1.jpg"
     },
     {
-      "titulo": "Proyecto Web 2",
-      "descripcion": "En este proyecto se construyó una aplicación utilizando React y Node.js para el backend.",
-      "imagen": "proyecto2.jpg",
-      "link": "https://enlace-a-tu-proyecto2.com"
+      "titulo": "Generador de contraseñas 🔐ClaveCraft",
+      "descripcion": "Generador de contraseñas seguras y aleatorias.",
+      "imagen": "imagenes/clave1.png"
     },
     {
-      "titulo": "Proyecto Web 3",
-      "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "titulo": "Portafolio personal de proyectos",
+      "descripcion": "Pagina web para mostrar mis proyectos, habilidades y certificaciones",
+      "imagen": "imagenes/portafolio1.png"
     }
     ,
     {
       "titulo": "Proyecto Web 4",
       "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "imagen": "proyecto3.jpg"
     }
     ,
     {
       "titulo": "Proyecto Web 5",
       "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "imagen": "proyecto3.jpg"
     }
     ,
     {
       "titulo": "Proyecto Web 6",
       "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "imagen": "proyecto3.jpg"
     }
     ,
     {
       "titulo": "Proyecto Web 7",
       "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "imagen": "proyecto3.jpg"
     }
     ,
     {
       "titulo": "Proyecto Web 8",
       "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "imagen": "proyecto3.jpg"
     }
     ,
     {
       "titulo": "Proyecto Web 9",
       "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "imagen": "proyecto3.jpg"
     }
     ,
     {
       "titulo": "Proyecto Web 10",
       "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "imagen": "proyecto3.jpg"
     }
     ,
     {
       "titulo": "Proyecto Web 11",
       "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "imagen": "proyecto3.jpg"
     }
     ,
     {
       "titulo": "Proyecto Web 12",
       "descripcion": "Este es un proyecto utilizando Django y Python para crear una aplicación web dinámica.",
-      "imagen": "proyecto3.jpg",
-      "link": "https://enlace-a-tu-proyecto3.com"
+      "imagen": "proyecto3.jpg"
     }
   ]
   

@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
 
               <div class="modal-body">
-               <div id="${modal.id}Carousel" class="carousel slide carousel-modal" data-bs-ride="carousel">
+               <div id="${modal.id}Carousel" class="carousel slide carousel-modal mb-2" data-bs-ride="carousel">
                   <div class="carousel-inner">
                     ${carouselItems}
                   </div>

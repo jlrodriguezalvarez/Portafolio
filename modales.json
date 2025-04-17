@@ -25,47 +25,59 @@
   },
   {
     "id": "modalProyecto2",
-    "titulo": "App de Tareas con Vue",
+    "titulo": "App generadora de contraseñas",
     "icono": "fas fa-tasks",
-    "imagen": "imagenes/tareas.png",
+    "imagen": "imagenes/clave1.png",
     "imagenes_slider": [
-      "imagenes/tareas1.png",
-      "imagenes/tareas2.png"
+      "imagenes/clave1.png",
+      "imagenes/clave2.png",
+      "imagenes/clave3.png"
     ],
-    "descripcion": "Una aplicación simple para gestionar tareas con interfaz moderna y filtros.",
+    "descripcion": "Una aplicación simple diseñada para generar contraseñas seguras de forma personalizada y sencilla. Ideal para usuarios que valoran la seguridad de su información digital, la app permite configurar la longitud de la contraseña y seleccionar los tipos de caracteres a incluir (mayúsculas, minúsculas, números y símbolos).",
     "tecnologias": [
-      { "icono": "fab fa-vuejs text-success", "nombre": "Vue.js" },
-      { "icono": "fab fa-css3-alt text-info", "nombre": "CSS" }
+      { "icono": "bx bxl-flutter text-primary", "nombre": "Flutter" },
+      { "icono": "fa-solid fa-file-code text-primary", "nombre": "Dart" },
+      { "icono": "bx bxl-android text-success", "nombre": "CSS" }
     ],
     "caracteristicas": [
-      "Agregar, eliminar y filtrar tareas.",
-      "Guardado local de tareas.",
-      "Diseño responsive."
+      "Generador de contraseñas seguras y aleatorias.",
+      "Indicador visual de la fuerza de la contraseña con sugerencias para mejorarla.",
+      "Copiar al portapapeles con un solo toque.",
+      "Historial de contraseñas generadas, con opción de copiar o exportar.",
+      "Exportación de contraseñas en archivo .txt directamente a la carpeta de descargas, con detección automática del sistema operativo.",
+      "Soporte para Android, iOS, Windows, macOS y Linux.",
+      "Modo claro y oscuro",
+      "Interfaz responsiva, adaptada a dispositivos móviles y de escritorio."
     ],
     "github": "https://github.com/tu_usuario/app-tareas-vue"
   },
   {
     "id": "modalProyecto3",
-    "titulo": "Portfolio Personal",
+    "titulo": "Portafolio Personal",
     "icono": "fas fa-user",
     "imagen": "imagenes/portfolio.png",
     "imagenes_slider": [
-      "imagenes/portfolio1.png",
-      "imagenes/portfolio2.png"
+      "imagenes/portafolio1.png",
+      "imagenes/portafolio2.png",
+      "imagenes/portafolio3.png"
     ],
-    "descripcion": "Sitio web personal con diseño responsivo, modo oscuro automático y secciones modulares",
+    "descripcion": "Portafolio web personal completamente responsivo, con implementación de modo oscuro automático y un diseño modular adaptable a cualquier dispositivo. Esta aplicación fue desarrollada utilizando tecnologías modernas para proporcionar una experiencia de usuario optimizada.",
     "tecnologias": [
       { "icono": "fab fa-html5 text-danger", "nombre": "HTML" },
       { "icono": "fab fa-sass text-pink", "nombre": "SASS" },
-      { "icono": "fab fa-js text-warning", "nombre": "JavaScript" }
+      { "icono": "fab fa-js text-warning", "nombre": "JavaScript" },
+      { "icono": "fas fa-cogs text-info", "nombre": "JSON" }
     ],
     "caracteristicas": [
-      "Modo oscuro automático.",
-      "Animaciones suaves con SCSS.",
-      "Modales dinámicos con JSON 😘"
+      "Implementación de modo oscuro automático que ajusta la interfaz dependiendo de la configuración del sistema del usuario.",
+      "Animaciones suaves y transiciones implementadas con SCSS para mejorar la experiencia visual.",
+      "Generación dinámica de modales a través de JSON para facilitar la actualización y expansión de proyectos.",
+      "Diseño completamente responsivo, adaptándose a dispositivos de diferentes tamaños.",
+      "Desarrollo optimizado para el rendimiento en dispositivos móviles y escritorio."
     ],
-    "github": "https://github.com/tu_usuario/mi-portafolio"
-  },
+    "github": "https://github.com/jlrodriguezalvarez/portafolio"
+  }
+    ,
   {
     "id": "modalProyecto4",
     "titulo": "Control Escolar",
