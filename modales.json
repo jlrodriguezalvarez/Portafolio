@@ -3,7 +3,8 @@
     "id": "modalProyecto1",
     "titulo": "Sistema de Gestión de Tickets",
     "icono": "fas fa-code",
-    "imagen": "imagenes/tickets.png",
+    "categoria": "web",
+    "imagen": "imagenes/tickets1.jpg",
     "imagenes_slider": [
       "imagenes/tickets1.jpg",
       "imagenes/tickets2.jpg",
@@ -27,6 +28,7 @@
     "id": "modalProyecto2",
     "titulo": "App generadora de contraseñas",
     "icono": "fas fa-tasks",
+    "categoria": "web",
     "imagen": "imagenes/clave1.png",
     "imagenes_slider": [
       "imagenes/clave1.png",
@@ -49,13 +51,14 @@
       "Modo claro y oscuro",
       "Interfaz responsiva, adaptada a dispositivos móviles y de escritorio."
     ],
-    "github": "https://github.com/tu_usuario/app-tareas-vue"
+    "github": ""
   },
   {
     "id": "modalProyecto3",
     "titulo": "Portafolio Personal",
     "icono": "fas fa-user",
-    "imagen": "imagenes/portfolio.png",
+    "categoria": "web",
+    "imagen": "imagenes/portafolio1.png",
     "imagenes_slider": [
       "imagenes/portafolio1.png",
       "imagenes/portafolio2.png",
@@ -82,6 +85,7 @@
     "id": "modalProyecto4",
     "titulo": "Control Escolar",
     "icono": "fas fa-school",
+    "categoria": "Movil",
     "imagen": "imagenes/escolar.png",
     "imagenes_slider": [
       "imagenes/escolar1.png",
@@ -103,6 +107,7 @@
     "id": "modalProyecto5",
     "titulo": "Clon de Netflix",
     "icono": "fas fa-video",
+    "categoria": "web",
     "imagen": "imagenes/netflix-clone.png",
     "imagenes_slider": [
       "imagenes/netflix-clone1.png",
@@ -124,6 +129,155 @@
     "id": "modalProyecto6",
     "titulo": "Blog con Django",
     "icono": "fas fa-blog",
+    "categoria": "wEB",
+    "imagen": "imagenes/blog.png",
+    "imagenes_slider": [
+      "imagenes/blog1.png",
+      "imagenes/blog2.png"
+    ],
+    "descripcion": "Blog completo con creación y edición de artículos, comentarios y panel de administración.",
+    "tecnologias": [
+      { "icono": "fab fa-python text-info", "nombre": "Python" },
+      { "icono": "fas fa-database text-success", "nombre": "SQLite" }
+    ],
+    "caracteristicas": [
+      "Panel de admin con Django.",
+      "Comentarios por usuarios.",
+      "Edición en tiempo real."
+    ],
+    "github": "https://github.com/tu_usuario/blog-django"
+  },
+  {
+    "id": "modalProyecto7",
+    "titulo": "Sistema de Gestión de Tickets",
+    "icono": "fas fa-code",
+    "categoria": "Desktop",
+    "imagen": "imagenes/tickets1.jpg",
+    "imagenes_slider": [
+      "imagenes/tickets1.jpg",
+      "imagenes/tickets2.jpg",
+      "imagenes/tickets3.jpg"
+    ],
+    "descripcion": "Sistema para registrar, asignar y cerrar tickets de soporte. Incluye panel de usuario, técnico y administrador.",
+    "tecnologias": [
+      { "icono": "fab fa-php text-primary", "nombre": "PHP" },
+      { "icono": "fas fa-database text-success", "nombre": "MySQL" },
+      { "icono": "fab fa-bootstrap text-purple", "nombre": "Bootstrap" },
+      { "icono": "fab fa-js-square text-warning", "nombre": "JavaScript" }
+    ],
+    "caracteristicas": [
+      "Autenticación y gestión de roles.",
+      "Dashboard con estadísticas.",
+      "Reportes en PDF."
+    ],
+    "github": "https://github.com/tu_usuario/gestion-tickets"
+  },
+  {
+    "id": "modalProyecto8",
+    "titulo": "App generadora de contraseñas",
+    "icono": "fas fa-tasks",
+    "categoria": "Movil",
+    "imagen": "imagenes/clave1.png",
+    "imagenes_slider": [
+      "imagenes/clave1.png",
+      "imagenes/clave2.png",
+      "imagenes/clave3.png"
+    ],
+    "descripcion": "Una aplicación simple diseñada para generar contraseñas seguras de forma personalizada y sencilla. Ideal para usuarios que valoran la seguridad de su información digital, la app permite configurar la longitud de la contraseña y seleccionar los tipos de caracteres a incluir (mayúsculas, minúsculas, números y símbolos).",
+    "tecnologias": [
+      { "icono": "bx bxl-flutter text-primary", "nombre": "Flutter" },
+      { "icono": "fa-solid fa-file-code text-primary", "nombre": "Dart" },
+      { "icono": "bx bxl-android text-success", "nombre": "CSS" }
+    ],
+    "caracteristicas": [
+      "Generador de contraseñas seguras y aleatorias.",
+      "Indicador visual de la fuerza de la contraseña con sugerencias para mejorarla.",
+      "Copiar al portapapeles con un solo toque.",
+      "Historial de contraseñas generadas, con opción de copiar o exportar.",
+      "Exportación de contraseñas en archivo .txt directamente a la carpeta de descargas, con detección automática del sistema operativo.",
+      "Soporte para Android, iOS, Windows, macOS y Linux.",
+      "Modo claro y oscuro",
+      "Interfaz responsiva, adaptada a dispositivos móviles y de escritorio."
+    ],
+    "github": ""
+  },
+  {
+    "id": "modalProyecto9",
+    "titulo": "Portafolio Personal",
+    "icono": "fas fa-user",
+    "categoria": "Design",
+    "imagen": "imagenes/portafolio1.png",
+    "imagenes_slider": [
+      "imagenes/portafolio1.png",
+      "imagenes/portafolio2.png",
+      "imagenes/portafolio3.png"
+    ],
+    "descripcion": "Portafolio web personal completamente responsivo, con implementación de modo oscuro automático y un diseño modular adaptable a cualquier dispositivo. Esta aplicación fue desarrollada utilizando tecnologías modernas para proporcionar una experiencia de usuario optimizada.",
+    "tecnologias": [
+      { "icono": "fab fa-html5 text-danger", "nombre": "HTML" },
+      { "icono": "fab fa-sass text-pink", "nombre": "SASS" },
+      { "icono": "fab fa-js text-warning", "nombre": "JavaScript" },
+      { "icono": "fas fa-cogs text-info", "nombre": "JSON" }
+    ],
+    "caracteristicas": [
+      "Implementación de modo oscuro automático que ajusta la interfaz dependiendo de la configuración del sistema del usuario.",
+      "Animaciones suaves y transiciones implementadas con SCSS para mejorar la experiencia visual.",
+      "Generación dinámica de modales a través de JSON para facilitar la actualización y expansión de proyectos.",
+      "Diseño completamente responsivo, adaptándose a dispositivos de diferentes tamaños.",
+      "Desarrollo optimizado para el rendimiento en dispositivos móviles y escritorio."
+    ],
+    "github": "https://github.com/jlrodriguezalvarez/portafolio"
+  }
+    ,
+  {
+    "id": "modalProyecto10",
+    "titulo": "Control Escolar",
+    "icono": "fas fa-school",
+    "categoria": "Design",
+    "imagen": "imagenes/escolar.png",
+    "imagenes_slider": [
+      "imagenes/escolar1.png",
+      "imagenes/escolar2.png"
+    ],
+    "descripcion": "Sistema CRUD para la gestión de alumnos, materias y calificaciones.",
+    "tecnologias": [
+      { "icono": "fab fa-laravel text-danger", "nombre": "Laravel" },
+      { "icono": "fab fa-js-square text-warning", "nombre": "JavaScript" }
+    ],
+    "caracteristicas": [
+      "Relaciones entre tablas.",
+      "Validaciones de formularios.",
+      "Roles de usuario."
+    ],
+    "github": "https://github.com/tu_usuario/control-escolar"
+  },
+  {
+    "id": "modalProyecto11",
+    "titulo": "Clon de Netflix",
+    "icono": "fas fa-video",
+    "categoria": "Movil",
+    "imagen": "imagenes/netflix-clone.png",
+    "imagenes_slider": [
+      "imagenes/netflix-clone1.png",
+      "imagenes/netflix-clone2.png"
+    ],
+    "descripcion": "Clon básico de Netflix para practicar diseño UI y manejo de APIs.",
+    "tecnologias": [
+      { "icono": "fab fa-react text-cyan", "nombre": "React" },
+      { "icono": "fab fa-css3-alt text-primary", "nombre": "CSS" }
+    ],
+    "caracteristicas": [
+      "UI moderna con carrousels.",
+      "Consumo de API de películas.",
+      "Responsive design."
+    ],
+    "github": "https://github.com/tu_usuario/netflix-clone"
+  },
+  {
+    "id": "modalProyecto12",
+    "titulo": "Blog con Django",
+    "icono": "fas fa-blog",
+    "categoria": "Desktop",
     "imagen": "imagenes/blog.png",
     "imagenes_slider": [
       "imagenes/blog1.png",

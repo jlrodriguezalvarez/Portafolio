@@ -1,0 +1,759 @@
+// ==========================================================================
+// 1. VARIABLES Y CONFIGURACIÓN
+// ==========================================================================
+
+// Colores principales
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$bg-color: #f8f9fa; // Fondo modo claro
+$transition-speed: 0.3s;
+
+// Modo Claro (Variables para tarjetas)
+$card-bg-light: white;
+$card-hover-light: #b3d3fa;
+$card-border-light: #ddd;
+
+// Modo Oscuro (Variables)
+$dark-bg-color: #121212;
+$dark-text-color: #ffffff;
+$dark-primary-color: #a865fa;  // Morado neón principal
+$dark-button-color: #8941e2;
+$dark-secondary-color: #3700b3;
+$modal-bg-dark: #2c2f36;
+$card-bg-dark: #1e1e1e;
+$card-border-dark: #3a3a3a;
+$dark-border-color: #444444;
+
+// ==========================================================================
+// 2. ESTILOS GENERALES Y RESET
+// ==========================================================================
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $bg-color;
+    color: $secondary-color;
+    overflow-x: hidden;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+// Scrollbar personalizado (Chrome/Safari)
+.cert-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+.cert-scroll::-webkit-scrollbar-thumb {
+    background-color: $primary-color;
+    border-radius: 4px;
+}
+
+// Transiciones de visibilidad para secciones
+.section {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5s ease-out;
+}
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// ==========================================================================
+// 3. HEADER (HERO SECTION) Y TYPED TEXT
+// ==========================================================================
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+    background: linear-gradient(to right, #0044cc, #0080ff);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    // CONTENEDOR DE BOTONES (Para alinearlos bien)
+    .header-buttons {
+        margin-top: 2rem;
+        width: 100%;
+        max-width: 800px; // Que no se abran demasiado en pantallas gigantes
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    // ESTILOS DE LOS BOTONES DEL HEADER
+    .btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 50px; // Bordes redondos (Pill shape) es más moderno
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        min-width: 200px; // Tamaño mínimo decente, pero no gigante
+        text-decoration: none;
+
+        // Animación del icono al hacer hover
+        i {
+            transition: transform 0.3s ease;
+        }
+        &:hover i {
+            transform: translateY(-3px);
+        }
+    }
+
+    // BOTÓN 1: PROYECTOS (Blanco con texto azul - Resalta sobre el fondo azul)
+    .btn-custom-primary {
+        background-color: white;
+        color: #0044cc;
+        border: 2px solid white;
+
+        &:hover {
+            background-color: transparent; // Se vuelve transparente
+            color: white;
+            border-color: white;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); // Brillo blanco
+        }
+    }
+
+    // BOTÓN 2: CV (Transparente con borde blanco - "Ghost Button")
+    .btn-custom-outline {
+        background-color: transparent;
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.5); // Borde sutil
+
+        &:hover {
+            background-color: $primary-color; // Se llena de azul al tocarlo
+            border-color: $primary-color;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+    
+// Animación de Texto (Typed.js)
+.typed-container {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.typed-text {
+    display: inline-block;
+    font-size: 2.5rem;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+// Media Queries para texto
+@media (max-width: 768px) {
+    .typed-text { font-size: 2rem; }
+}
+@media (max-width: 480px) {
+    .typed-text { font-size: 1.5rem; }
+}
+
+// ==========================================================================
+// 4. NAVBAR
+// ==========================================================================
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.2rem;
+}
+
+.navbar {
+    background-color: $primary-color;
+    transition: background-color $transition-speed, box-shadow $transition-speed;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+    transform: scale(1.1);
+}
+
+// ==========================================================================
+// 5. SECCIÓN HABILIDADES (SKILLS)
+// ==========================================================================
+
+.habilidades {
+    transition: transform $transition-speed;
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+        i { color: $primary-color; }
+        h5.card-title {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+// ==========================================================================
+// 6. SECCIÓN PROYECTOS (TARJETAS Y ANIMACIONES)
+// ==========================================================================
+
+#contenedor-proyectos {
+    overflow: visible; // Evita cortes en las sombras
+}
+
+// Estilos Base de Cards (Modo Claro)
+.card {
+    max-width: 100%;
+    box-sizing: border-box;
+    background-color: $card-bg-light;
+    color: $secondary-color;
+    border: 1px solid $card-border-light;
+    transition: background-color $transition-speed, transform $transition-speed;
+
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    &:hover {
+        background-color: $card-hover-light;
+        transform: translateY(-10px);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// --- NUEVOS ESTILOS PRO (Animaciones y Zoom) ---
+
+// Animación de entrada en cascada
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-anim {
+    opacity: 0;
+    animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+// Efectos Hover Especiales para Proyectos
+.card-hover {
+    transition: all 0.3s ease;
+    
+    // Contenedor para recorte de zoom
+    .overflow-hidden {
+        position: relative;
+        overflow: hidden;
+        border-radius: calc(0.375rem - 1px) calc(0.375rem - 1px) 0 0;
+    }
+
+    // Imagen con zoom
+    .img-zoom {
+        transition: transform 0.5s ease;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+
+        .img-zoom { transform: scale(1.1); }
+        
+        .btn-primary {
+            background-color: darken($primary-color, 10%);
+            border-color: darken($primary-color, 10%);
+        }
+    }
+}
+
+// Badges de tecnologías (Etiquetas)
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    i { font-size: 1.1em; }
+}
+
+
+// =========================================================
+// ESTILOS DE FILTROS Y PAGINACIÓN
+// =========================================================
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .filter-btn {
+        padding: 8px 20px;
+        border: 2px solid $primary-color; // Borde azul inicial
+        background-color: transparent;
+        color: $primary-color;
+        border-radius: 50px; // Forma de píldora
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: rgba($primary-color, 0.1);
+            transform: translateY(-2px);
+        }
+
+        &.active {
+            background-color: $primary-color;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+    }
+}
+
+// --- AJUSTES MODO OSCURO PARA FILTROS ---
+body.dark-mode {
+    .filters .filter-btn {
+        border-color: $dark-primary-color; // Morado
+        color: $dark-primary-color;
+
+        &:hover {
+            background-color: rgba($dark-primary-color, 0.1);
+        }
+
+        &.active {
+            background-color: $dark-primary-color;
+            color: white;
+            box-shadow: 0 4px 10px rgba(168, 101, 250, 0.3);
+        }
+    }
+    
+    // Paginación en modo oscuro
+    #paginacion .btn-outline-secondary {
+        color: $dark-text-color;
+        border-color: $dark-border-color;
+        &:hover {
+            background-color: $dark-secondary-color;
+            border-color: $dark-primary-color;
+        }
+    }
+}
+
+// ==========================================================================
+// 7. SECCIÓN CERTIFICACIONES
+// ==========================================================================
+
+.certificaciones-seccion {
+    padding: 50px 20px;
+    background-color: $bg-color;
+    color: $secondary-color;
+
+    h2, h3 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: $primary-color;
+    }
+
+    .certificaciones-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 50px;
+
+        .cert-card {
+            background-color: white;
+            border: 1px solid $card-border-light;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.03);
+                background-color: $card-hover-light;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+            p { font-weight: bold; }
+        }
+    }
+
+    .cert-scroll {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: $primary-color transparent;
+
+        img {
+            height: 160px;
+            border-radius: 10px;
+            border: 1px solid $card-border-light;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+}
+
+// ==========================================================================
+// 8. SECCIÓN CONTACTO Y FOOTER
+// ==========================================================================
+
+#contacto {
+    padding: 3rem 1rem;
+    .section-title { margin-bottom: 1.5rem; }
+
+    /* === [INICIO: Estilos para el Formulario (Modo Claro)] === */
+    .contact-form-custom {
+        // Estilo general para el formulario en modo claro
+        // Las clases de Bootstrap (bg-light, shadow-lg, p-4) ya ayudan mucho
+        background-color: white !important;
+        margin-bottom: 2rem; 
+        
+        .form-label {
+            font-weight: bold;
+            color: $secondary-color; // Texto gris oscuro
+        }
+    }
+    /* === [FIN: Estilos para el Formulario (Modo Claro)] === */
+
+    .contact-links { // <-- Aquí empiezan tus estilos para los íconos
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; // CRÍTICO: Centra los elementos horizontalmente.
+        gap: 2rem;
+        margin-top: 2rem; // Asegura espacio entre el formulario y los enlaces.
+        padding: 0 1rem;
+    }
+        .contact-card {
+            background-color: $card-bg-light;
+            border: 1px solid $card-border-light;
+            padding: 1.5rem 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            color: $primary-color;
+            text-decoration: none;
+            transition: transform $transition-speed ease, box-shadow $transition-speed ease;
+            width: 200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            i {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+                display: block;
+            }
+
+            &:hover {
+                background-color: $primary-color;
+                color: $dark-text-color;
+                transform: translateY(-8px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        .contact-links { flex-direction: column; align-items: center; padding: 0; }
+        .contact-card { width: 90%; }
+    }
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: $primary-color;
+    color: white;
+}
+
+// ==========================================================================
+// 9. MODALES (BASE)
+// ==========================================================================
+
+.modal-content {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+// Ajustes para el carrusel dentro del modal
+.carousel-inner {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+// ==========================================================================
+// 10. MODO OSCURO (CONFIGURACIÓN MAESTRA Y CORRECCIONES)
+// ==========================================================================
+
+body.dark-mode {
+    background-color: $dark-bg-color;
+    color: $dark-text-color;
+
+    // A. Navbar Oscuro
+    .navbar {
+        background-color: $dark-primary-color;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .navbar-nav .nav-link {
+        color: $dark-text-color !important;
+    }
+
+    // B. Header Oscuro
+    header {
+        // (Ya tenías el background aquí, déjalo igual)
+        background: linear-gradient(to right, $dark-secondary-color, $dark-primary-color);
+
+        // === CORRECCIÓN DE BOTONES MODO OSCURO ===
+
+        // 1. Botón "Ver Proyectos" (El Sólido)
+        .btn-custom-primary {
+            background-color: $dark-text-color; // Blanco puro
+            color: $dark-primary-color;         // Texto Morado Neón (en vez de azul)
+            border-color: $dark-text-color;
+
+            &:hover {
+                background-color: transparent;  // Se vuelve transparente
+                color: $dark-text-color;        // Texto blanco
+                border-color: $dark-text-color; // Borde blanco
+                // Brillo Morado Neón intenso al pasar el mouse
+                box-shadow: 0 0 20px rgba($dark-primary-color, 0.8); 
+            }
+        }
+
+        // 2. Botón "Descargar CV" (El Fantasma)
+        .btn-custom-outline {
+            color: rgba($dark-text-color, 0.9); // Blanco un poco más suave
+            border-color: rgba($dark-text-color, 0.5); // Borde sutil
+
+            &:hover {
+                background-color: $dark-primary-color; // Se llena de Morado Neón
+                border-color: $dark-primary-color;
+                color: white;
+                // Efecto "Sable de Luz" (Glow)
+                box-shadow: 0 0 25px rgba($dark-primary-color, 0.6); 
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    // D. Tarjetas Habilidades Oscuras
+    .habilidades {
+        background-color: $card-bg-dark;
+        color: $dark-text-color;
+        border: 1px solid $card-border-dark;
+
+        &:hover {
+            background-color: $dark-secondary-color;
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .card-body i { color: $dark-primary-color; }
+    }
+
+    .card {
+        background-color: $card-bg-dark;
+        color: $dark-text-color;
+        border: 1px solid $card-border-dark;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+        .card-title { color: $dark-text-color; }
+
+        // FIX: Texto visible
+        .text-muted {
+            color: #b0b3b8 !important; 
+        }
+
+        // Estado Hover de la Tarjeta en MODO OSCURO
+        &:hover {
+            background-color: $dark-secondary-color;
+            border-color: $dark-primary-color;
+            box-shadow: 0px 4px 20px rgba(168, 101, 250, 0.2); // Resplandor morado en la tarjeta
+
+            // =====================================================
+            // AQUÍ ESTÁ LA SOLUCIÓN DEL BOTÓN
+            // =====================================================
+            // Forzamos al botón a ser morado neón al hacer hover en la tarjeta
+            .btn, .btn-primary {
+                background-color: $dark-primary-color !important; 
+                border-color: $dark-primary-color !important;
+                color: white !important;
+                box-shadow: 0 0 15px rgba($dark-primary-color, 0.5); // Un brillo extra para que se vea pro
+            }
+        }
+    }
+
+    // F. Modales Oscuros (CORRECCIÓN DE TÍTULOS)
+    .modal-content {
+        background-color: $modal-bg-dark;
+        color: $dark-text-color;
+        border: 1px solid $card-border-dark;
+
+        .modal-header {
+            background-color: darken($modal-bg-dark, 5%) !important;
+            border-bottom: 1px solid $card-border-dark;
+
+            .modal-title { color: $dark-primary-color !important; }
+            .btn-close { filter: invert(1) grayscale(100%) brightness(200%); } // X blanca
+        }
+
+        .modal-body {
+            background-color: $modal-bg-dark;
+            
+            // *** FIX: Títulos h6 morados y visibles ***
+            h6 {
+                color: $dark-primary-color !important;
+                background-color: transparent; 
+            }
+            p, li { color: #e0e0e0; }
+            .text-muted { color: #b0b3b8 !important; }
+        }
+
+        .modal-footer {
+            background-color: darken($modal-bg-dark, 5%);
+            border-top: 1px solid $card-border-dark;
+            color: $dark-text-color;
+        }
+    }
+
+    // G. Badges en Modo Oscuro
+    .badge.bg-secondary {
+        background-color: rgba($dark-primary-color, 0.2) !important;
+        color: lighten($dark-primary-color, 10%) !important;
+        border-color: rgba($dark-primary-color, 0.3) !important;
+    }
+    
+    // Botón GitHub oscuro
+    .btn-dark {
+        background-color: $card-bg-dark;
+        border: 1px solid $dark-primary-color;
+        color: $dark-primary-color;
+        &:hover {
+            background-color: $dark-primary-color;
+            color: white;
+        }
+    }
+
+    // H. Certificaciones y Contacto Oscuro
+    .certificaciones-seccion {
+        background-color: $dark-bg-color;
+        color: $dark-text-color;
+        .cert-card {
+            background-color: $card-bg-dark;
+            border: 1px solid $card-border-dark;
+            &:hover { background-color: $dark-secondary-color; }
+        }
+        .cert-scroll img { border-color: $card-border-dark; }
+    }
+
+    #contacto {
+        
+        // 1. Sobreescritura del formulario en modo oscuro
+        .contact-form-custom {
+            background-color: $card-bg-dark !important; 
+            border: 1px solid $card-border-dark;
+            
+            .form-label {
+                color: $dark-text-color; // Letras blancas
+            }
+
+            // Estilo de los campos de texto
+            input, textarea {
+                background-color: $dark-bg-color; // Negro profundo
+                border: 1px solid $dark-border-color;
+                color: $dark-text-color;
+
+                &:focus {
+                    background-color: $dark-bg-color;
+                    color: $dark-text-color;
+                    border-color: $dark-primary-color; // Morado neón al enfocar
+                    box-shadow: 0 0 0 0.25rem rgba($dark-primary-color, 0.25);
+                }
+                
+                &::placeholder {
+                    color: #b0b3b8;
+                }
+            }
+        }
+
+        // 2. Estilos de los contact-card (Asegurando el color neón en los íconos)
+        .contact-links {
+        .contact-card {
+            background-color: $card-bg-dark;
+            border: 1px solid $card-border-dark;
+            color: $dark-text-color;
+            i { color: $dark-primary-color; } 
+            &:hover {
+                background-color: $dark-secondary-color;
+                color: #fff;
+                box-shadow: 0 8px 24px rgba(168, 101, 250, 0.15);
+            }
+        }
+    }
+    }
+    /* === [FIN: Estilos para el Formulario (Modo Oscuro)] === */
+
+    
+
+    
+
+    // I. Footer Oscuro
+    footer {
+        background-color: $dark-secondary-color;
+        color: $dark-text-color;
+    }
+
+    
+}
