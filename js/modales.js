@@ -56,12 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 </ul>
               </div>
 
-              <div class="modal-footer justify-content-between">
-                <a href="${modal.github}" target="_blank" class="btn btn-outline-dark">
-                  <i class="fab fa-github"></i> Ver código en GitHub
-                </a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              </div>
+            <div class="modal-footer justify-content-between">
+             ${modal.github ? `
+              <a href="${modal.github}" target="_blank" class="btn btn-outline-dark">
+                <i class="fab fa-github"></i> Ver código en GitHub
+               </a>
+              ` : ''}
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+             </div>
             </div>
           </div>
         </div>
