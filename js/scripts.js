@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Si hay una preferencia guardada para el modo oscuro, la aplicamos
+    // Si hay una preferencia guardada para el modo oscuro, se aplica
     if (localStorage.getItem('darkMode') === 'enabled') {
         body.classList.add('dark-mode');
         darkModeToggle.innerHTML = '🌞'; // Cambiar el ícono al sol si el modo oscuro está activado
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem('darkMode', 'disabled');
         }
 
-        // Actualizar el color del navbar inmediatamente
+        // Actualizamos el color del navbar inmediatamente
         actualizarNavbar();
     });
 });
@@ -46,7 +46,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       
       const target = document.querySelector(this.getAttribute('href'));
       window.scrollTo({
-        top: target.offsetTop - 60, // Ajusta este valor según la altura del navbar
+        top: target.offsetTop - 60, 
         behavior: 'smooth'
       });
     });
@@ -55,19 +55,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Configuración de Typed.js (Animación de texto)
 document.addEventListener('DOMContentLoaded', function () {
     const typed = new Typed('.typed-text', {
-        strings: ["Hola! Soy Jose Luis Rodriguez", "Desarrollador Web | Software", "Ing sistemas computacionales"], // Los textos que deseas animar
+        strings: ["Hola! Soy Jose Luis Rodriguez", "Desarrollador Web | Software", "Ing sistemas computacionales"], // Los textos animados
         typeSpeed: 80,
         backSpeed: 35,
         backDelay: 1000,
         startDelay: 500,
         loop: true,
         onComplete: function(self) {
-          // Aquí puedes agregar la clase hidden al texto anterior
+          
           const currentText = document.querySelector('.typed-text');
           currentText.classList.add('hidden');
           setTimeout(() => {
             currentText.classList.remove('hidden');
-          }, 500); // El tiempo de espera debe coincidir con la transición
+          }, 500); 
         }
       });      
 });
@@ -91,13 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       todosLosProyectos = data;
       
-      // 1. Generar TODOS los modales ocultos (para que estén listos al dar clic)
+      // Generar TODOS los modales ocultos (para que estén listos al dar clic)
       generarModales(todosLosProyectos);
       
-      // 2. Inicializar la vista (Muestra la página 1 con filtro 'todos')
+      // Inicializar la vista (Muestra la página 1 con filtro 'todos')
       actualizarVista();
       
-      // 3. Configurar los botones de filtro (listeners)
+      // Configurar los botones de filtro (listeners)
       setupFiltros();
     })
     .catch(error => console.error("Error:", error));
@@ -107,14 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const contenedorProyectos = document.getElementById("contenedor-proyectos");
     contenedorProyectos.innerHTML = ""; // Limpiar contenedor antes de agregar nuevos
 
-    // A. Filtrar proyectos según la categoría seleccionada
+    // Filtramos proyectos según la categoría seleccionada
     const proyectosFiltrados = todosLosProyectos.filter(p => {
-       // Si el JSON no tiene categoría, asumimos 'general' para que no falle
+       // Si el JSON no tiene categoría, asumimos 'general'
        const catProyecto = p.categoria ? p.categoria.toLowerCase() : 'general';
        return categoriaActual === 'todos' || catProyecto === categoriaActual;
     });
 
-    // B. Calcular paginación
+    // Calcular paginación
     const totalPaginas = Math.ceil(proyectosFiltrados.length / proyectosPorPagina);
     
     // Si cambiamos de filtro y la página actual ya no existe (ej: página 3), volver a la 1
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const indiceFin = indiceInicio + proyectosPorPagina;
     const proyectosA_Mostrar = proyectosFiltrados.slice(indiceInicio, indiceFin);
 
-    // C. Generar HTML de las tarjetas
+    // Generar HTML de las tarjetas
     if (proyectosA_Mostrar.length === 0) {
         contenedorProyectos.innerHTML = '<div class="text-center w-100 py-5">No hay proyectos en esta categoría.</div>';
     } else {
@@ -159,14 +159,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // D. Generar botones de paginación
+    //Generar botones de paginación
     renderizarPaginacion(totalPaginas);
   }
 
   // Función para mostrar los controles de paginación (1, 2, 3...)
   function renderizarPaginacion(totalPaginas) {
     const contenedorPaginacion = document.getElementById("paginacion");
-    contenedorPaginacion.innerHTML = ""; // Limpiar botones anteriores
+    contenedorPaginacion.innerHTML = "";
 
     if (totalPaginas <= 1) return; // Si solo hay 1 página, no mostrar botones
 
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Cambiar texto del botón para dar feedback visual
             btnEnviar.innerText = 'Enviando...';
             
-            // Estos IDs deben coincidir con los de tu cuenta de EmailJS
+            // Estos IDs de EmailJS
             const serviceID = 'outlook_portafolio';
             const templateID = 'template_ep5lpd3';
 
